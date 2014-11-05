@@ -1,15 +1,51 @@
 ---
-layout: default
+layout: page
 ---
-<div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+<div class="twelve blogcol">
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+    {% if page.image_url %}
+        <div class="blog-single-img">
+            <img alt="Front 1" src="{{ page.image_url }}" />
+        </div>
+    {% endif %}
+
+    <div class="blog-snippet">
+        <h4 class="alt-h">{{ page.title}}</h4>
+        <span>POSTED BY <a href="#">{{ page.author}}</a> IN <a href="{{ page.categories.url }}">{{ page.categories }}</a></span>
+        <p>
+            {{ content }}
+        </p>
+    </div>
+
+
+    <div class="blog-pagination">
+
+        {% if page.previous.url %} 
+
+            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}">
+                <div class="btn left"><i class="entypo left-thin">&nbsp;</i>Previous Post</div>
+            </a>
+
+        {% else %}
+
+            <div class="btn left disabled"><i class="entypo left-thin">&nbsp;</i>Previous Post</div>
+
+        {% endif %}
+
+
+        {% if page.next.url %}
+
+            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}">
+                <div class="btn right">Next Post<i class="entypo right-thin">&nbsp;</i></div>
+            </a>
+
+        {% else %}   
+
+            <div class="btn right disabled">Next Post<i class="entypo right-thin">&nbsp;</i></div>
+
+        {% endif %}
+
+    </div>
 
 </div>
