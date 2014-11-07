@@ -1,0 +1,158 @@
+---
+layout: default
+title: Samyukti - Blog
+---
+
+<div class="page-header">
+    <div class="row">
+        <div class="twelve columns">
+            <h1 class="animated fadeInDown hero-h1 text-white">BLOG</h1>
+        </div>
+    </div>
+</div>
+
+<section class="page-preamble animated fadeInUp">
+
+    <div class="row inner-section">
+        <div class="twelve columns">
+            <div class="page-subtitle">OUR THOUGHTS</div>
+        </div>
+    </div>
+
+</section>
+
+<section id="blog" class="animated fadeInUpBig">
+
+    <div class="row inner-section">
+
+        <div class="nine columns">
+
+            <div class="blog-text">
+				
+				{{ content }}
+
+            </div>
+
+            <div class="hr grey-hr"></div>
+
+            <div class="comments">
+                <h5>3 Comments</h5>
+
+                <div class="comment">
+                    <div class="left author-img">
+                        <img alt="team" src="http://placehold.it/100x100" />
+                    </div>
+                    <div class="left comment-text text-left">
+                        <span><a href="#">Joe Blogs </a>
+                        </span>»
+                        <span>18th Aug 2013</span>»
+                        <span><a href="#"> Reply</a>
+                        </span>
+                        <p>
+                            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="comment indent">
+                    <div class="left author-img">
+                        <img alt="team" src="http://placehold.it/100x100" />
+                    </div>
+                    <div class="left comment-text text-left">
+                        <span><a href="#">Robbin Banks </a>
+                        </span>»
+                        <span>18th Aug 2013</span>»
+                        <span><a href="#"> Reply</a>
+                        </span>
+                        <p>
+                            Optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="left author-img">
+                        <img alt="team" src="http://placehold.it/100x100" />
+                    </div>
+                    <div class="left comment-text text-left">
+                        <span><a href="#">Bob Down </a>
+                        </span>»
+                        <span>21st Aug 2013</span>»
+                        <span><a href="#"> Reply</a>
+                        </span>
+                        <p>
+                            Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                        </p>
+                    </div>
+                </div>
+
+                <form id="contact-form">
+                    <label>Name *</label>
+                    <input id="form-name" type="text" />
+                    <label>Message *</label>
+                    <textarea id="form-msg"></textarea>
+                    <input type="submit" value="Submit" class="form-button right" />
+
+                </form>
+
+
+
+            </div>
+
+        </div>
+        <!-- end of blog left -->
+
+        <div class="three columns" id="sidebar">
+
+            <div id="category-widget" class="twelve blogcol sidebar-widget">
+
+                <h4 class="alt-h">Categories</h4>
+
+                <ul>
+                    {% for category in site.categories limit:5 %}
+
+                        <li><a href="#"><i class="entypo chevron-small-right">&nbsp;</i>{{ category | first }}</a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            <div id="tags-widget" class="twelve blogcol sidebar-widget">
+                <h4 class="alt-h">Tags</h4>
+                <ul>
+                    {% for tags in site.tags limit:5 %}
+
+                        <li><a href="#">{{ tags | first }}</a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="twelve blogcol sidebar-widget">
+                <h4 class="alt-h">Slider Widget</h4>
+                <div class="slider small-slider">
+                    <ul class="slides">
+                        <li>
+                            <img alt="Home Featured Project" src="http://placehold.it/220x140" />
+                        </li>
+
+                        <li>
+                            <img alt="Home Featured Project" src="http://placehold.it/220x140" />
+                        </li>
+
+                        <li>
+                            <img alt="Home Featured Project" src="http://placehold.it/220x140" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- end of sidebar -->
+
+    </div>
+
+</section>

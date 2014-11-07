@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="ie6 no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="ie7 no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="ie8 no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+{% include head.html %}
+
+<body>
+    <a id="top"></a>
+    <div id="main-container"> <!-- Main Container -->
+
+    	{% include header.html %}
+ 
+    		{{ content }}
+
+    	{% include footer.html %}
+
+    </div><!-- end of Main Container -->
+
+  {% include scripts-defaults.html %}
+
+</body>
+
+</html>

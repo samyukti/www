@@ -1,0 +1,163 @@
+---
+layout: default
+title: Samyukti - Blog
+---
+
+<div class="page-header">
+    <div class="row">
+        <div class="twelve columns">
+            <h1 class="animated fadeInDown hero-h1 text-white">BLOG</h1>
+        </div>
+    </div>
+</div>
+
+<section class="page-preamble animated fadeInUp">
+
+    <div class="row inner-section">
+        <div class="twelve columns">
+            <div class="page-subtitle">OUR THOUGHTS</div>
+        </div>
+    </div>
+
+</section>
+
+<section id="blog" class="animated fadeInUpBig">
+
+    <div class="row inner-section">
+
+            <div class="nine columns">
+
+            {% for post in paginator.posts %}
+
+                    <div class="blog-post">
+                        <div class="two blogcol">
+                            <div class="blog-date text-center">
+                                <h4>{{ post.date: | date: "%d %b" }}</h4>
+                            </div>
+                        </div>
+
+                        <div class="ten blogcol">
+
+                            {% if post.image_url %}
+                                <div class="blog-img-holder">
+                                    <img alt="Front 1" src="{{ post.image_url }}" />
+                                </div>
+                            {% endif %}
+
+                            <div class="blog-snippet">
+                                <a href="{{ post.url | prepend:site.baseurl }}">  
+                                    <h4 class="alt-h">{{ post.title }}</h4>
+                                </a>
+                                <span>POSTED BY <a href="#">{{ post.author }}</a> IN <a href="#">{{ post.categories }}</a>
+                                </span>
+                                <p>
+                                    {{ post.content | truncatewords: 50 }}
+
+                                </p>
+                                <a href="{{ post.url | prepend:site.baseurl }}">
+                                    <div class="btn">READ MORE <i class="entypo right-thin"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+            {% endfor %}
+
+
+            <div class="row">
+            
+            {% if paginator.total_pages > 1 %}
+
+                <div class="blog-pagination">
+
+                    {% if paginator.previous_page %}
+
+                        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                            <div class="btn left"><i class="entypo left-thin">&nbsp;</i>Older</div>
+                        </a>
+
+                    {% else %}
+
+                        <div class="btn left disabled"><i class="entypo left-thin">&nbsp;</i>Older</div>
+
+                    {% endif %}
+
+
+                    {% if paginator.next_page %}
+
+                        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                            <div class="btn right">Newer<i class="entypo right-thin">&nbsp;</i></div>
+                        </a>
+
+                    {% else %}   
+
+                        <div class="btn right disabled">Newer<i class="entypo right-thin">&nbsp;</i></div>
+
+                    {% endif %}
+
+                </div>
+
+            {% endif %}
+
+            </div>
+
+        </div>
+
+          
+        <!-- end of blog left -->
+
+        <div class="three columns" id="sidebar">
+            
+            <div id="category-widget" class="twelve blogcol sidebar-widget">
+
+                <h4 class="alt-h">Categories</h4>
+
+                <ul>
+                    {% for category in site.categories limit:5 %}
+                        
+                        <li><a href="/blog/{{ category | first }}"><i class="entypo chevron-small-right">&nbsp;</i>{{ category | first }}</a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            <div id="tags-widget" class="twelve blogcol sidebar-widget">
+                <h4 class="alt-h">Tags</h4>
+                <ul>
+                    {% for tags in site.tags limit:5 %}
+
+                        <li><a href="#">{{ tags | first }}</a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="twelve blogcol sidebar-widget">
+                <h4 class="alt-h">Slider Widget</h4>
+                <div class="slider small-slider">
+                    <ul class="slides">
+                        <li>
+                            <img alt="Home Featured Project" src="http://placehold.it/220x140" />
+                        </li>
+
+                        <li>
+                            <img alt="Home Featured Project" src="http://placehold.it/220x140" />
+                        </li>
+
+                        <li>
+                            <img alt="Home Featured Project" src="http://placehold.it/220x140" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- end of sidebar -->
+
+    </div>
+
+</section>
