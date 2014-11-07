@@ -1,4 +1,4 @@
-www
-===
+Samyukti - Website & Blog
+=========================
 
 www.samyukti.com
